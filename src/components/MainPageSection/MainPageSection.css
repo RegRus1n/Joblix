@@ -1,0 +1,65 @@
+.banner {
+    position: relative;
+    align-items: flex-start;
+    display: flex;
+    height: 100vh;
+}
+
+.welcome_article {
+    margin-top: 100px;
+    z-index: 2;
+}
+
+.welcome_article h1,
+.welcome_article p,
+.welcome_article a {
+    font-family: "Montserrat-Light";
+    margin-left: 80px;
+    margin-top: 35px;
+    font-weight: 700;
+}
+
+.welcome_article h1 {
+    width: 892px;
+}
+
+.welcome_article p {
+    width: 879px;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.welcome_article p {
+    width: 879px;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.welcome_article h1 {
+    font-family: "DrukWideCyr-Bold";
+    width: 892px;
+    font-size: 39.92px;
+}
+
+/* подключить шрифт  DrukWideCyr-ExtraBold */
+.log_in_btn {
+    display: inline-block;
+    width: 197.36px;
+    text-decoration: none;
+    text-align: center;
+    border: none;
+    font-size: 27.54px;
+    font-weight: 600;
+    color: white;
+    margin-top: 35px;
+    padding: 10px 20px 10px 20px;
+    border-radius: 100px;
+    background-color: #00C0D8;
+}
+
+.banner__maskot {
+    position: absolute;
+    top: -5%;
+    right: 0%;
+    z-index: 1;
+}
