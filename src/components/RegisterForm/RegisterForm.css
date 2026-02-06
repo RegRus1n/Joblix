@@ -1,0 +1,113 @@
+.Log_in_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: calc(100vh - 100px);
+    padding: 40px 20px;
+}
+
+.login_block {
+    width: 100%;
+    max-width: 735px;
+    background-color: #fff;
+    border-radius: 40px;
+    padding: 30px 50px;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.05);
+}
+
+.login_block form {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.login_block h1 {
+    font-family: 'DrukWideCyr-Bold', sans-serif;
+    font-size: 44px;
+    color: #000;
+    background-color: white;
+    text-align: center;
+    margin-bottom: 40px;
+    line-height: 1.2;
+}
+
+.enter_email {
+    width: 100%;
+    padding: 22px 30px;
+    border: 1px solid #1a1a2e;
+    border-radius: 24.7px;
+    font-family: 'Montserrat-Light', sans-serif;
+    font-size: 22px;
+    color: #000;
+    margin-bottom: 25px;
+    outline: none;
+    background: transparent;
+}
+
+.enter_email::placeholder {
+    color: #888;
+    font-family: 'Montserrat-Light', sans-serif;
+}
+
+.form_log_in_btn {
+    height: 64.38px;
+    padding: 24px;
+    border-radius: 24.7px;
+    background-color: #00C1D4;
+    color: #fff;
+    border: none;
+    font-family: 'DrukWideCyr-Bold', sans-serif;
+    font-size: 24px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form_log_in_btn:hover {
+    background-color: #00b0c2;
+    transform: translateY(-2px);
+}
+.policy_agreement_container, .policy_agreement_container * {
+    background-color: white;
+}
+.policy_agreement_container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 0 5px;
+}
+
+.policy_agreement_container input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    min-width: 22px;
+    height: 22px;
+    border: 1px solid #1a1a2e;
+    border-radius: 6px;
+    cursor: pointer;
+    position: relative;
+    background-color: #fff;
+}
+
+.policy_agreement_container input[type="checkbox"]:checked::after {
+    content: '✓';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 16px;
+    color: #1a1a2e;
+}
+
+.policy_agreement_container label {
+    font-family: 'Montserrat-Light', sans-serif;
+    font-size: 14px;
+    color: #555;
+    line-height: 1.3;
+    cursor: pointer;
+}

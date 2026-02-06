@@ -1,14 +1,14 @@
 import './App.css'
 import { Routes, Route } from 'react-router-dom'
 import HomePage from './pages/HomePage/HomePage'
-import RegisterPage from './pages/RegisterPage/RegisterPage'
+import ProfessionsPage from './pages/ProfessionsPage/ProfessionsPage'
 
 function App() {
   return (
     <>
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/register" element={<RegisterPage />} />
+        <Route path="/professions" element={<ProfessionsPage />} />
       </Routes>
     </>
   )
