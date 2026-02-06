@@ -1,0 +1,46 @@
+.ProfessionCard {
+    flex-shrink: 0;
+    width: 263px;
+    height: 401px;
+    background: rgba(132, 130, 144, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    border-radius: 40px;
+    margin: 0 55px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.ProfessionCard::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    
+    /* Магия: внутренняя тень имитирует свечение справа */
+    /* Сдвигаем тень влево (-15px), чтобы она "заползла" с правого края внутрь */
+    box-shadow: inset -7.5px 0 20px -5px var(--joblix-light-color);
+    
+    /* Если нужно еще и легкое общее свечение по контуру */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+
+.ProfessionCard::after {
+    content: "";
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    width: 250px;
+    height: 350px;
+    background: radial-gradient(circle at top right, var(--joblix-light-color) 0%, transparent 65%);
+    pointer-events: none;
+    z-index: 0;
+}

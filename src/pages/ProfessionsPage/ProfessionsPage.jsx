@@ -1,6 +1,8 @@
 import "./ProfessionsPage.css"
 import Header from "../../components/Header/Header"
 import mikoMaskot from "../../assets/svg/Miko.svg"
+import ProfessionCard from "../../components/ProfessionCard/ProfessionCard"
+import CyanCurve from "../../assets/svg/Cyan_Curve.svg"
 
 export default function ProfessionsPage() {
     return (
@@ -17,6 +19,22 @@ export default function ProfessionsPage() {
                         <img className="maskot" width="90px" src={mikoMaskot} alt="Mico" />
                     </div>
                 </article>
+            </section>
+            <section className="professions_list" id="professions_list">
+                
+                <img 
+                className="cyan_curve"
+                src={CyanCurve} 
+                alt="cyan curve behind" />
+
+                <h1 className="professions_list__title">КЕМ БУДЕМ СЕГОДНЯ?</h1>
+                <div className="professions_list__cards">
+                    <ProfessionCard/>
+                    <ProfessionCard/>
+                    <ProfessionCard/>
+                    <ProfessionCard/>
+                    <ProfessionCard/>
+                </div>
             </section>
         </div>
     )

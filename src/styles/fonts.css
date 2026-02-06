@@ -1,3 +1,9 @@
+:root{
+    --joblix-color: #101025;
+    --joblix-light-color: #00C0D8;
+    --joblix-dark-color:#1E1E1E;
+}
+
 @font-face {
     font-family: 'Montserrat-Light';
     src: url("../assets/fonts/Montserrat/static/Montserrat-Light.ttf") format("truetype");

@@ -14,7 +14,7 @@ export default function HomePage() {
 
             <div className="content-wrapper">
                 <div className={`page-section ${!isHidden ? 'visible' : 'hidden'}`}>
-                    <MainPageSection />
+                    <MainPageSection setIsHidden={setIsHidden} isHidden={isHidden} />
                 </div>
 
                 <div className={`page-section ${isHidden ? 'visible' : 'hidden'}`}>
