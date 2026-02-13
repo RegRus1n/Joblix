@@ -1,0 +1,53 @@
+@import url(../../styles/fonts.css);
+.about_joblix{
+    display: flex;
+    align-items: center;
+    position: relative;
+    height: 714.6px;
+}
+.about_joblix article{
+    max-width: 863px;
+    min-width: 300px;
+    padding: 40px;
+    margin-left: 10%;
+    margin-right: 10%;
+    border-radius: 17px;
+    font-size: 23.22px;
+    text-align: justify;
+    background-color: var(--joblix-dark-color);
+}
+.maskot{
+    width: 469.47px;
+    left: 62%;
+    bottom: -25px;
+    position: absolute;
+    z-index: -1;
+}
+
+.slogan{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+    /* border-radius: 133px 133px 0 0; */
+    background-color: var(--joblix-dark-color);
+}
+.slogan article{
+    width: 1187px;
+    margin: auto 0 auto 0;
+    font-family: "DrukWideCyr-Bold", sans-serif;
+}
+.slogan article h1{
+    position: relative;
+    font-size: 68.21px;
+    color: #00C0D8;
+    font-family: "DrukWideCyr-Bold", sans-serif;
+}
+.slogan article h1 p{
+    width: 548px;
+    position: absolute;
+    font-size: 27.92px;
+    font-weight: 400;
+    top: 90px;
+    left: 450px;
+}

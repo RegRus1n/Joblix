@@ -11,6 +11,20 @@
     font-style: normal;   
     font-display: swap;
 }
+
+@font-face {
+    font-family: 'Montserrat-Bold';
+    src: url("../assets/fonts/Montserrat/static/Montserrat-Bold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;   
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Montserrat-VariableFont_wght';
+    src: url("../assets/fonts/Montserrat/Montserrat-VariableFont_wght.ttf") format("truetype");
+    font-style: normal;   
+    font-display: swap;
+}
 @font-face {
     font-family: "DrukWideCyr-Bold";
     src: url("../assets/fonts/Druk Wide Cyr/fonts/drukwidecyr-bold.ttf") format('truetype');

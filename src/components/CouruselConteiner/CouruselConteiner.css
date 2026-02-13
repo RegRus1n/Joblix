@@ -1,0 +1,42 @@
+.courusel_conteiner{
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    gap: 0;
+    height: 371px;
+    width: 100%;
+}
+.courusel_block{
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    flex-shrink: 0;
+    height: 223px;
+    animation: scroll-carousel 15s linear infinite;
+}
+.couserl__item{
+    width: 178px;
+    height: 223px;
+    margin: 0 10px 0 10px;
+    border-radius: 26px;
+    flex-shrink: 0;
+}
+@keyframes scroll-carousel {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-1386px); 
+    }
+}
+.CouruselConteiner article{
+    font-family: "Montserrat-Light", sans-serif;
+    margin: 80px auto 40px auto;
+    text-align: center;
+    width: 916px;
+    font-size: 23.22px;
+    align-items: center;
+}
+p{
+    font-family: "Montserrat-Light", sans-serif;
+}

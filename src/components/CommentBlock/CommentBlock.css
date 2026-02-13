@@ -1,0 +1,45 @@
+.comment_block {
+    background-color: white;
+    border-radius: 20px;
+    padding: 28px 42.71px 39.92px 30.64px;
+    width: 383px;
+    height: 362px !important;
+    flex-shrink: 0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    height: 100%;
+}
+
+.comment_header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.comment_header h3 {
+    font-family: "Montserrat-Bold", sans-serif;
+    font-weight: 700;
+    font-size: 24.76px;
+    font-weight: 600;
+    margin: 0;
+    color: #1a1a1a;
+}
+
+.comment_stars {
+    display: flex;
+}
+
+.star_icon {
+    width: 26.92px;
+    height: 26.92px;
+}
+
+.comment_text {
+    font-family: "Montserrat-VariableFont_wght", sans-serif;
+    font-size: 12.07px;
+    font-weight: 400;
+    color: #000;
+    margin: 0;
+    text-align: justify;
+}
