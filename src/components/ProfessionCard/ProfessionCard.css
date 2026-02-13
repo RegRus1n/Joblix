@@ -1,21 +1,22 @@
 .ProfessionCard {
     flex-shrink: 0;
-    width: 263px;
-    height: 401px;
-    background: rgba(132, 130, 144, 0.2);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 16px;
+    width: 280px;
+    height: 420px;
+    background-color: #4b5b5e00;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
     border-radius: 40px;
-    margin: 0 55px;
-    position: relative;
-    overflow: hidden;
+    padding: 28px 37px 0 30px;
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    padding: 20px;
-    box-sizing: border-box;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    border: none;
+    margin: 0 57px;
 }
+
 
 .ProfessionCard::before {
     content: "";
@@ -26,21 +27,89 @@
     
     /* Магия: внутренняя тень имитирует свечение справа */
     /* Сдвигаем тень влево (-15px), чтобы она "заползла" с правого края внутрь */
-    box-shadow: inset -7.5px 0 20px -5px var(--joblix-light-color);
+    box-shadow: inset -10px 0 20px -5px var(--joblix-light-color);
     
     /* Если нужно еще и легкое общее свечение по контуру */
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+.ProfessionCard__image-container {
+    position: relative;
+    width: 100%;
+    height: 118px;
+    border-radius: 35px;
+    overflow: hidden;
+    z-index: 1;
+    
+}
 
-.ProfessionCard::after {
-    content: "";
-    position: absolute;
-    top: -20px;
-    right: -20px;
-    width: 250px;
-    height: 350px;
-    background: radial-gradient(circle at top right, var(--joblix-light-color) 0%, transparent 65%);
-    pointer-events: none;
-    z-index: 0;
+.ProfessionCard__image {
+    /* width: 100%; */
+    height: 118px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.ProfessionCard:hover .ProfessionCard__image {
+    transform: scale(1.05);
+}
+.ProfessionCard__title{
+    font-size: 19.13px;
+    /* line-height: 1.5; */
+    color: #FFFFFF;
+    text-align: left;
+    margin: 31px 10px 5px 10px;
+    font-style: regular;
+    z-index: 1;
+    font-family: 'Montserrat-Light', sans-serif;
+    text-decoration: underline;
+    font-weight: 700;
+    letter-spacing: -0.2px;
+    align-self: start;
+}
+.ProfessionCard__title:hover {
+    color: #55E5FB; 
+    transition: 0.3s ease;
+}
+.ProfessionCard__description {
+    height: 92px;
+    font-size: 10px;
+    line-height: 1.5;
+    text-align: justify;
+    margin: 10.62px;
+    z-index: 1;
+    font-family: 'Montserrat-Light', sans-serif;
+    font-weight: 400;
+    display: -webkit-box;
+    text-justify: inter-word;
+    /* -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical; */
+    overflow: hidden;
+    /* letter-spacing: -0.2px; */
+}
+
+.ProfessionCard__salary-badge {
+    font-family: "DrukWideCyr-Bold", sans-serif;
+    font-weight: 700;
+    font-size: 15.43px;
+    position: relative;
+    width: 92%;
+    height: 54px;
+    margin-top: auto;
+    margin-bottom: 28px;
+    border: 2px solid #55E5FB;
+    border-radius: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFFFFF;
+    z-index: 1;
+    text-transform: uppercase;
+    letter-spacing: -0.5px;
+    box-shadow: 0 4px 15px rgba(85, 229, 251, 0.1);
+    transition: all 0.3s ease;
+}
+
+.ProfessionCard:hover .ProfessionCard__salary-badge {
+    box-shadow: 0 6px 20px rgba(85, 229, 251, 0.2);
 }

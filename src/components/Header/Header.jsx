@@ -18,7 +18,7 @@ export default function Header({ isHidden, setIsHidden }) {
 
         <nav className="Header_nav">
             <a onClick={() => setIsSupportOpen(!isSupportOpen)} href="#">Служба поддержки</a>
-            <Link to="/">О нас</Link>
+            <Link to="/aboutus">О нас</Link>
             <a onClick={() => setIsHidden(!isHidden)} href="#">Вход</a>
         </nav>
 
