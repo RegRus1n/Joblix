@@ -1,0 +1,30 @@
+.GlowingBackground{
+    position: absolute;
+    width: 100%;
+    /* overflow: hidden; */
+    pointer-events: none;
+}
+
+.backgorund-element{
+    position: absolute;
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    object-position: center;
+    left: 50%;
+    top: 30%;
+    transform: translate(-50%, -50%);
+}
+
+
+.dark-blue-element{
+    z-index: 1;
+}
+
+.sky-blue-element{
+    z-index: 2;
+}
+
+.light-blue-element{
+    z-index: 3;
+}

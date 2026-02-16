@@ -1,0 +1,50 @@
+.LockedLevel {
+    width: 100%;
+    padding: 100px 0 150px;
+    text-align: center;
+}
+
+.LockedLevel__header {
+    margin-bottom: 60px;
+}
+
+.LockedLevel__level {
+    font-family: "Montserat-Bold", sans-serif;
+    font-size: 28.76px;
+    font-weight: 600;
+    color: white;
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+.LockedLevel__status {
+    font-family: "DrukWideCyr-Bold", sans-serif;
+    font-size: 38.07px;
+    font-weight: bold;
+    color: #00D9FF;
+    margin: 0;
+    letter-spacing: 2px;
+}
+
+.LockedLevel__content {
+    position: relative;
+    display: flex;
+    justify-content: right;
+    align-items: flex-end;
+    gap: 40px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.LockedLevel__lock {
+    width: 128px;
+    height: 157.79px;
+    opacity: 0.9;
+    margin-bottom: auto;
+    margin-top: 100px;
+}
+
+.LockedLevel__character {
+    width: 379.45px;
+    height: auto;
+}

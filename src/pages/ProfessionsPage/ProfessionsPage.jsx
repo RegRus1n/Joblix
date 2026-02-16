@@ -23,7 +23,7 @@ export default function ProfessionsPage() {
 
                     <div className="choose_btn_container">
                         <a href="#professions_list">Выбрать</a>
-                        <img className="maskot" width="90px" src={mikoMaskot} alt="Mico" />
+                        <img className="litle_miko" width="90px !importent" src={mikoMaskot} alt="Mico" />
                     </div>
                 </article>
             </section>

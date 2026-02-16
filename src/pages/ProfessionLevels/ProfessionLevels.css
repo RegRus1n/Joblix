@@ -1,0 +1,40 @@
+.ProfessionLevels{
+    background-color: #101025 !important;
+    overflow: hidden;
+}
+
+.Footer{
+    border-radius: 133px 133px 0px 0px;
+    /* как прилепить футер к нижней части экрана */
+    /* position: fixed; */
+    bottom: 0;
+    width: 100%;
+}
+
+.Motivation-slogan{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 600px;
+    font-size: 36.89px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+    font-family: "DrukWideCyr-Bold", sans-serif;
+    color: white;
+    overflow: hidden;
+}
+
+.Motivation-slogan .GlowingBackground{
+    z-index: 0;
+    top: 0;
+    left: 0;
+    height: 100%;
+}
+
+.Motivation-slogan__slogan{
+    position: relative;
+    z-index: 1;
+}

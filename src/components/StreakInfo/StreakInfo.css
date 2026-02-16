@@ -1,0 +1,108 @@
+.StreakInfo {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    gap: 40px;
+    margin: 300px auto 0 auto;
+    z-index: 1000;
+    background-color: #1E1E1E;
+}
+
+.StreakInfo__cards {
+    display: flex;
+    gap: 30px;
+}
+
+.StreakInfo__card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px 25px;
+    background-color: #1E1E1E;
+    border: 2px solid #00D9FF;
+    border-radius: 37.47px;
+    min-width: 200px;
+}
+
+.StreakInfo__card-number {
+    font-family: "DrukWideCyr-Bold", sans-serif;
+    font-size: 32px;
+    font-weight: bold;
+    color: #00D9FF;
+    line-height: 1.2;
+    margin-bottom: 5px;
+}
+
+.StreakInfo__card-label {
+    font-family: "DrukWideCyr-Bold", sans-serif;
+    font-size: 15.71px;
+    font-weight: 600;
+    color: white;
+    line-height: 1.2;
+}
+
+.StreakInfo__goal {
+    flex: 0.3;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.StreakInfo__goal-title {
+    font-family: "Geologica", sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+}
+
+.StreakInfo__goal-description {
+    font-family: "Geologica", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.4;
+}
+
+.StreakInfo__character {
+    position: relative;
+    width: 93.91px;
+    height: 154.74px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.StreakInfo__character img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    position: absolute;
+    top: 25px;
+}
+
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .StreakInfo {
+        flex-direction: column;
+        padding: 30px;
+        gap: 25px;
+    }
+
+    .StreakInfo__cards {
+        width: 100%;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .StreakInfo__card {
+        width: 100%;
+    }
+
+    .StreakInfo__character {
+        width: 80px;
+        height: 80px;
+    }
+}
