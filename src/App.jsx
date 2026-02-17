@@ -12,7 +12,18 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/professions" element={<ProfessionsPage />} />
         <Route path="/aboutus" element={<AboutUs />} />
-        <Route path="/professionlevels" element={<ProfessionLevels />} />
+        <Route path="/smm-levels" element={<ProfessionLevels
+        navigateLink = "/smm-levels"
+        title="SMM-Маркетолог"
+        goal="Мастер маркетинга"
+        requirements="Освой еще 2 навыка и пройди 3 задания без ошибок"
+        />} />
+        <Route path="/frontend-levels" element={<ProfessionLevels 
+        navigateLink = "/frontend-levels"
+        title = "Front-End Разработчик"
+        goal = "Цель: Рицарь Фронта"
+        requirements = "Освой еще 2 навыка и пройди 3 задания без ошибок"
+        />} />
       </Routes>
     </>
   )

@@ -29,3 +29,7 @@
     font-family: "DrukWideCyr-Bold";
     src: url("../assets/fonts/Druk Wide Cyr/fonts/drukwidecyr-bold.ttf") format('truetype');
 }
+@font-face {
+    font-family: "Jost";
+    src: url("../assets/fonts/Jost/Jost-VariableFont_wght.ttf") format('truetype');
+}

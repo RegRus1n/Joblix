@@ -5,11 +5,11 @@ import Curve1 from "../../assets/images/Curve1.svg"
 import Curve2 from "../../assets/images/Curve2.svg"
 import Curve3 from "../../assets/images/Curve3.svg"
 
-export default function LevelTasks() {
+export default function LevelTasks({title}) {
   return (
     <div className="LevelTasks">
       <div className="LevelTasks__header">
-        <h2 className="LevelTasks__title">SMM-МАРКЕТИНГ</h2>
+        <h2 className="LevelTasks__title">{title}</h2>
         <p className="LevelTasks__level">1 УРОВЕНЬ</p>
       </div>
 

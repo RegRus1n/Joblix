@@ -1,3 +1,7 @@
+.Footer{
+    border-radius: 0 !important;
+}
+
 .welcome_conteiner {
     display: flex;
     justify-content: center;

@@ -1,6 +1,7 @@
 import "./ProfessionCard.css"
+import { Link } from "react-router-dom"
 
-export default function ProfessionCard({ image, title, description, salary }) {
+export default function ProfessionCard({ image, title, description, salary, navigateTo }) {
     return (
         <div className="ProfessionCard">
             <div className="ProfessionCard__image-container"
@@ -13,9 +14,11 @@ export default function ProfessionCard({ image, title, description, salary }) {
             }
             >
             </div>
-            <p className="ProfessionCard__title">
-                {title}
-            </p>
+            <Link to = {navigateTo}>
+                <p className="ProfessionCard__title">
+                    {title}
+                </p>
+            </Link>
             <p className="ProfessionCard__description">
                 {description}
             </p>

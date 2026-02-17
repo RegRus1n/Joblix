@@ -10,8 +10,9 @@ import frontdev_prof from "../../assets/images/FrontDev_prof.svg"
 import marketing_prof from "../../assets/images/Marketing_prof.svg"
 import target_prof from "../../assets/images/Target_prof.svg"
 import Footer from "../../components/Footer/Footer"
+import ProfessionCardSoon from "../../components/ProfessionCardSoon/ProfessionCardSoon"
 
-export default function ProfessionsPage() {
+export default function ProfessionsPage({navigateLink}) {
     return (
         <div className="ProfessionsPage">
             <Header />
@@ -38,16 +39,28 @@ export default function ProfessionsPage() {
                 <div className="professions_list__cards">
                     {/* Поискать в интернете менее ширный шрифт druk'а */}
                     <ProfessionCard
-                        image = {ai_prof}
-                        title = "ИИ-специалист"
-                        description="работает с искусственным интеллектом. Обучает нейросети, создаёт чат-ботов, анализирует данные и внедряет ИИ-технологии, чтобы автоматизировать задачи и повышать эффективность бизнеса."
-                        salary="~750$/мес"
-                    />
-                    <ProfessionCard
+                        navigateTo = "/smm-levels"
                         image={marketing_prof}
                         title = "SMM-Маркетолог"
                         description="Специалист, который помогает бизнесу расти через соцсети. Он изучает аудиторию, создаёт контент, ведёт страницы бренда и запускает рекламу, чтобы привлекать клиентов и повышать продажи."
                         salary="~350$/мес"
+                    />
+                    <ProfessionCard
+                        navigateTo = "/frontend-levels"
+                        image={frontdev_prof}
+                        title = "Frontend Dev-ers"
+                        description="Создаёт визуальную часть сайтов (HTML, CSS, JS), отвечает за скорость и интерактивность интерфейса."
+                        salary="~750$/мес"
+                    />
+                        <ProfessionCardSoon/>
+                        <ProfessionCardSoon/>
+                        <ProfessionCardSoon/>
+                    {/* Не Удалять нижние карточки */}
+                    {/* <ProfessionCard
+                        image = {ai_prof}
+                        title = "ИИ-специалист"
+                        description="работает с искусственным интеллектом. Обучает нейросети, создаёт чат-ботов, анализирует данные и внедряет ИИ-технологии, чтобы автоматизировать задачи и повышать эффективность бизнеса."
+                        salary="~750$/мес"
                     />
                     <ProfessionCard
                         image={design_prof}
@@ -56,17 +69,11 @@ export default function ProfessionsPage() {
                         salary="~460$/мес"
                     />
                     <ProfessionCard
-                        image={frontdev_prof}
-                        title = "Frontend Dev-ers"
-                        description="Создаёт визуальную часть сайтов (HTML, CSS, JS), отвечает за скорость и интерактивность интерфейса."
-                        salary="~750$/мес"
-                    />
-                    <ProfessionCard
                         image={target_prof}
                         title = "Таргетолог"
                         description="Создаёт визуальную часть сайтов (HTML, CSS, JS), отвечает за скорость и интерактивность интерфейса."
                         salary="~750$/мес"
-                    />
+                    /> */}
                 </div>
             </section>
             <Footer/>        
