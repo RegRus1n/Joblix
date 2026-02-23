@@ -1,0 +1,36 @@
+.ArrowButton {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: white;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  padding: 0;
+}
+
+.ArrowButton:hover:not(:disabled) {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transform: scale(1.05);
+}
+
+.ArrowButton:active:not(:disabled) {
+  transform: scale(0.95);
+}
+
+.ArrowButton--disabled {
+  background-color: #838383;
+  cursor: not-allowed;
+}
+
+.ArrowButton--left .ArrowButton__icon {
+  transform: scaleX(-1);
+}
+
+.ArrowButton__icon {
+  width: 24px;
+  height: 24px;
+}

@@ -4,6 +4,7 @@ import HomePage from './pages/HomePage/HomePage'
 import ProfessionsPage from './pages/ProfessionsPage/ProfessionsPage'
 import AboutUs from './pages/AboutUs/AboutUs'
 import ProfessionLevels from './pages/ProfessionLevels/ProfessionLevels'
+import SimulationLab from './components/SimulationLab/SimulationLab'
 
 function App() {
   return (
@@ -12,18 +13,8 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/professions" element={<ProfessionsPage />} />
         <Route path="/aboutus" element={<AboutUs />} />
-        <Route path="/smm-levels" element={<ProfessionLevels
-        navigateLink = "/smm-levels"
-        title="SMM-Маркетолог"
-        goal="Мастер маркетинга"
-        requirements="Освой еще 2 навыка и пройди 3 задания без ошибок"
-        />} />
-        <Route path="/frontend-levels" element={<ProfessionLevels 
-        navigateLink = "/frontend-levels"
-        title = "Front-End Разработчик"
-        goal = "Цель: Рицарь Фронта"
-        requirements = "Освой еще 2 навыка и пройди 3 задания без ошибок"
-        />} />
+        <Route path="/profession/:professionId" element={<ProfessionLevels/>} />
+        <Route path="/profession/:professionId/simulation" element={<SimulationLab/>} />
       </Routes>
     </>
   )

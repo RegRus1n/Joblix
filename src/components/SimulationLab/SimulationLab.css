@@ -1,0 +1,19 @@
+.SimulationLab{
+    height: 110vh;
+    overflow: hidden;
+}
+
+.SimulationLab__actions{
+    height: 100%;
+    display: flex;
+}
+
+.SimulationLab__actions__arrow_conteiner{
+    height: 80%;
+    padding: 20px;
+    display: flex;
+    align-items: end;
+}
+.ArrowButton{
+    margin-bottom: 20px;
+}

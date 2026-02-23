@@ -1,0 +1,109 @@
+.theory_template{
+    width: 100%;
+    height: 100%;
+}
+
+
+/* ==================== */
+/* ==== TEMPLATE 1 ==== */
+/* ==================== */
+.theory_templates1{
+    width: 100vw;
+}
+.theory_templates1_conteiner{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.theory_templates1__conteiner__image{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+.theory_templates1__conteiner__image img{
+    width: 420px;
+    align-self: center;
+}
+
+.theory_templates1__conteiner_article{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.theory_templates1__conteiner_article article{
+    width: 80%;
+    min-height: 50%;
+    max-height: 100%;
+    color: white;
+    padding-left: 37px;
+    font-size: 19.91px;
+}
+
+.theory_templates1__conteiner_article article h1{
+    font-family: "DrukWideCyr-Bold", sans-serif;
+    font-size: 48px;
+    color: #00C0D8;
+}
+.theory_templates1__conteiner_article article p{
+    font-family: "Montserrat-Light", sans-serif;
+    font-size: 22px;
+    color: white;
+}
+
+/* ==================== */
+/* ==== TEMPLATE 2 ==== */
+/* ==================== */
+
+
+
+
+
+
+
+
+
+/* ==================== */
+/* ==== TEMPLATE 5 ==== */
+/* ==================== */
+.theory_templates5__conteiner{
+    position: relative;
+    width: 90%;
+    height: 100%;
+}
+.theory_templates5__conteiner__img{
+    width: 80%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 48px;
+    font-family: "DrukWideCyr-Bold", sans-serif;
+    color: #00C0D8;
+}
+
+.theory_templates5__conteiner article{
+    position: absolute;
+    width: 678px;
+    min-height: 50px;
+    border-radius: 32px;
+    padding: 27px 37px;
+    color: white;
+    background-color: #1E1E1E;
+    box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.2), 
+                0 12px 22px 0 rgba(0, 0, 0, 0.19);
+    left: 678px;
+    top: 60%;
+    font-family: "Montserrat-Light", sans-serif;
+    font-size: 19.91px;
+}
+
+.theory_templates5__conteiner__miko{
+    position: absolute;
+    width: 280px;
+    left: 75%;
+    top: 20%;
+}

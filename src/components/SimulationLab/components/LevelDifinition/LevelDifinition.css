@@ -1,0 +1,19 @@
+.LevelDifinition{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.LevelDifinition_level-title h1{
+    font-family: "DrukWideCyr-Bold", sans-serif;
+    font-size: 87.11px;
+    color: var(--joblix-light-color);
+}
+.LevelDifinition_task-title p{
+    margin-bottom: 200px;
+    font-family: "Montserrat-Light", sans-serif;
+    font-size: 47.72px;
+}

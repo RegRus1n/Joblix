@@ -39,14 +39,14 @@ export default function ProfessionsPage({navigateLink}) {
                 <div className="professions_list__cards">
                     {/* Поискать в интернете менее ширный шрифт druk'а */}
                     <ProfessionCard
-                        navigateTo = "/smm-levels"
+                        navigateTo = "/profession/smm"
                         image={marketing_prof}
                         title = "SMM-Маркетолог"
                         description="Специалист, который помогает бизнесу расти через соцсети. Он изучает аудиторию, создаёт контент, ведёт страницы бренда и запускает рекламу, чтобы привлекать клиентов и повышать продажи."
                         salary="~350$/мес"
                     />
                     <ProfessionCard
-                        navigateTo = "/frontend-levels"
+                        navigateTo = "/profession/frontend"
                         image={frontdev_prof}
                         title = "Frontend Dev-ers"
                         description="Создаёт визуальную часть сайтов (HTML, CSS, JS), отвечает за скорость и интерактивность интерфейса."

@@ -1,0 +1,58 @@
+.WrongAnswerMessage {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.WrongAnswerMessage__box {
+  background-color: #1E1E1E;
+  border-radius: 24px;
+  padding: 40px 48px;
+  text-align: center;
+  max-width: 380px;
+  width: 90%;
+  border: 2px solid #ff4444;
+}
+
+.WrongAnswerMessage__emoji {
+  font-size: 48px;
+  margin-bottom: 12px;
+}
+
+.WrongAnswerMessage__title {
+  font-family: "DrukWideCyr-Bold", sans-serif;
+  font-size: 24px;
+  color: #ff4444;
+  margin-bottom: 12px;
+}
+
+.WrongAnswerMessage__text {
+  font-family: "Montserrat-Light", sans-serif;
+  font-size: 16px;
+  color: white;
+  margin-bottom: 28px;
+}
+
+.WrongAnswerMessage__btn {
+  background-color: #ff4444;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 14px 40px;
+  font-size: 16px;
+  font-family: "Montserrat-Light", sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.WrongAnswerMessage__btn:hover {
+  background-color: #cc0000;
+}

@@ -1,0 +1,30 @@
+{
+  "smm": {
+    "id": "smm",
+    "title": "SMM-Маркетолог",
+    "goal": "Мастер маркетинга",
+    "requirements": "Освой еще 2 навыка и пройди 3 задания без ошибок",
+    "levels": [
+      {
+        "levelId": "level1",
+        "levelName": "Основы SMM"
+      },
+      {
+        "levelId": "level2",
+        "levelName": "Продвинутый SMM"
+      }
+    ]
+  },
+  "frontend": {
+    "id": "frontend",
+    "title": "Front-End Разработчик",
+    "goal": "Цель: Рицарь Фронта",
+    "requirements": "Освой еще 2 навыка и пройди 3 задания без ошибок",
+    "levels": [
+      {
+        "levelId": "level1",
+        "levelName": "Основы Frontend"
+      }
+    ]
+  }
+}

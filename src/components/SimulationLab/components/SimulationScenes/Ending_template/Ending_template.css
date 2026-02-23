@@ -1,0 +1,71 @@
+.Ending_template {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Ending_template__container {
+  width: 90%;
+  height: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.Ending_template__left {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Ending_template__miko {
+  width: 350px;
+  height: auto;
+  object-fit: contain;
+}
+
+.Ending_template__right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.Ending_template__message {
+  font-family: "DrukWideCyr-Bold", sans-serif;
+  font-size: 56px;
+  color: #00C0D8;
+  margin: 0 0 24px 0;
+  text-transform: uppercase;
+}
+
+.Ending_template__description {
+  font-family: "Montserrat-Light", sans-serif;
+  font-size: 18px;
+  color: white;
+  line-height: 1.6;
+  margin: 0 0 32px 0;
+}
+
+.Ending_template__stars {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.Ending_template__star {
+  width: 48px;
+  height: 48px;
+}
+
+.Ending_template__stars_text {
+  font-family: "Montserrat-Light", sans-serif;
+  font-size: 20px;
+  color: #00C0D8;
+  font-weight: 600;
+  margin: 0;
+}
