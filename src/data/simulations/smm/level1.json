@@ -29,6 +29,35 @@
           "mascotMood": "friendly"
         },
         {
+          "id": "task1_theory3",
+          "forma": "theory",
+          "template": "template2",
+          "difficulty": "easy",
+          "title": "ЦА - ЦЕЛЕВАЯ АУДИТОРИЯ",
+          "paragraphs": [
+            "Прежде чем создавать контент, нужно понять, для кого ты это делаешь. Это основа любой стратегии SMM. Эти люди называются **целевой аудиторией**.",
+            "**Целевая аудитория** — это группа людей, у которых есть конкретная потребность, и твой продукт помогает ё решить."
+          ],
+          "mascotMood": "friendly"
+        },
+        {
+          "id": "task1_theory_test3",
+          "forma": "theory",
+          "template": "template3",
+          "difficulty": "easy",
+          "title": "TEMPLATE 3 - TEST",
+          "content": "Это **template3** где текст слева и Miko справа. Вот пример списка:\n1. Первый пункт важный\n2. Второй пункт с **выделением**\n3. Третий пункт обычный"
+        },
+        {
+          "id": "task1_theory_test5",
+          "forma": "theory",
+          "template": "template5",
+          "difficulty": "easy",
+          "title": "TEMPLATE 5 - TEST",
+          "content": "Это **template5** где текст справа в блоке с фоном. Картинка слева и Miko в углу. Обычный текст здесь.",
+          "image": null
+        },
+        {
           "id": "task1_multi1",
           "forma": "multiChoice",
           "template": "template2",
@@ -37,7 +66,8 @@
           "options": [
             { "id": "a", "text": "Покупка компьютеров для офиса" },
             { "id": "b", "text": "Привлечение аудитории и продвижение бренда в социальных сетях" },
-            { "id": "c", "text": "Создание мобильных игр" }
+            { "id": "c", "text": "Создание мобильных игр" },
+            { "id": "d", "text": "Нанимать сотрудников в компанию" }
           ],
           "correctAnswer": "b",
           "maxStars": 1,
@@ -57,10 +87,11 @@
           "question": "Какие социальные сети входят в инструменты SMM специалиста?",
           "options": [
             { "id": "a", "text": "Только Instagram" },
-            { "id": "b", "text": "Instagram, TikTok, Facebook, VK, YouTube и другие платформы" },
-            { "id": "c", "text": "Только LinkedIn" }
+            { "id": "b", "text": "Только LinkedIn" },
+            { "id": "c", "text": "Почта и рассылки" },
+            { "id": "d", "text": "Instagram, TikTok, Facebook, VK, YouTube и другие платформы" }
           ],
-          "correctAnswer": "b",
+          "correctAnswer": "d",
           "maxStars": 1,
           "starCriteria": {
             "1star": "Правильный ответ"

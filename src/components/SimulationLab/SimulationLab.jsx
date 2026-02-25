@@ -4,6 +4,9 @@ import "./SimulationLab.css"
 import HeaderSimulation from "./components/HeaderSimulation/HeaderSimulation"
 import { useParams } from 'react-router-dom'
 import TheoryTemplate1 from './components/SimulationScenes/theory_templates/theory_template1'
+import TheoryTemplate2 from './components/SimulationScenes/theory_templates/theory_template2'
+import TheoryTemplate3 from './components/SimulationScenes/theory_templates/theory_template3'
+import TheoryTemplate5 from './components/SimulationScenes/theory_templates/theory_template5'
 import MultiChoice_Choice from './components/SimulationTemplates/MultiChoice_Choice'
 import Ending_template from './components/SimulationScenes/Ending_template/Ending_template'
 import ArrowButton from './components/ArrowButton/ArrowButton'
@@ -82,6 +85,31 @@ export default function SimulationLab() {
         if (!currentScene) return null
 
         if (currentScene.forma === 'theory') {
+            if (currentScene.template === 'template2') {
+                return (
+                    <TheoryTemplate2
+                        title={currentScene.title}
+                        paragraphs={currentScene.paragraphs}
+                        onNext={goToNext}
+                    />
+                )
+            }
+            if (currentScene.template === 'template3') {
+                return (
+                    <TheoryTemplate3
+                        title={currentScene.title}
+                        description={currentScene.content}
+                    />
+                )
+            }
+            if (currentScene.template === 'template5') {
+                return (
+                    <TheoryTemplate5
+                        image={currentScene.image}
+                        description={currentScene.content}
+                    />
+                )
+            }
             return <TheoryTemplate1 title={currentScene.title} description={currentScene.content} />
         }
 
