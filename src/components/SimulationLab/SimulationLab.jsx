@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import "./SimulationLab.css"
 
 import HeaderSimulation from "./components/HeaderSimulation/HeaderSimulation"
@@ -13,17 +13,20 @@ import CorrectOrder from './components/SimulationTemplates/CorrectOrder'
 import Ending_template from './components/SimulationScenes/Ending_template/Ending_template'
 import ArrowButton from './components/ArrowButton/ArrowButton'
 import WrongAnswerMessage from './components/SimulationShared/WrongAnswerMessage'
+import HintsPanel from './components/HintsPanel/HintsPanel'
 
 import smmLevel1 from '@/data/simulations/smm/level1.json'
+import smmLevel2 from '@/data/simulations/smm/level2.json'
 import frontendLevel1 from '@/data/simulations/frontend/level1.json'
+import { saveTaskResult } from '../../utils/progress'
 
-const levelsData = {
-    smm: smmLevel1,
-    frontend: frontendLevel1,
+const allData = {
+    smm: { level1: smmLevel1, level2: smmLevel2 },
+    frontend: { level1: frontendLevel1 }
 }
 
 export default function SimulationLab() {
-    const { professionId } = useParams()
+    const { professionId, levelId, taskId } = useParams()
     const [currentSceneIndex, setCurrentSceneIndex] = useState(0)
     const [stars, setStars] = useState(0)
     const [wrongAttempts, setWrongAttempts] = useState(0)
@@ -31,61 +34,84 @@ export default function SimulationLab() {
     const [selectedOrder, setSelectedOrder] = useState([])
     const [showWrongMessage, setShowWrongMessage] = useState(false)
     const [starLost, setStarLost] = useState(false)
+    const [showHints, setShowHints] = useState(false)
+    const [savedProgress, setSavedProgress] = useState(false)
 
-    const levelData = levelsData[professionId]
-    const task = levelData?.tasks[0]
+    const levelData = allData[professionId]?.[levelId]
+    const task = levelData?.tasks?.find(t => t.taskId === taskId) || levelData?.tasks?.[0]
     const scenes = task?.scenes || []
     const currentScene = scenes[currentSceneIndex]
     const isMultiChoice = currentScene?.forma === 'multiChoice'
     const isCorrectOrder = currentScene?.forma === 'correctOrder'
+    const isQuestion = isMultiChoice || isCorrectOrder
     const isEnding = currentSceneIndex >= scenes.length
+
+    const hintsAvailable = isQuestion && wrongAttempts >= 1 && (currentScene?.hints?.length > 0)
+
+    // Save to localStorage when task ends
+    useEffect(() => {
+        if (isEnding && !savedProgress && task) {
+            saveTaskResult(professionId, levelId, task.taskId, stars)
+            setSavedProgress(true)
+        }
+    }, [isEnding])
+
+    // Reset state when navigating to a different task
+    useEffect(() => {
+        setSavedProgress(false)
+        setStars(0)
+        setCurrentSceneIndex(0)
+        setWrongAttempts(0)
+        setSelectedAnswer(null)
+        setSelectedOrder([])
+        setShowWrongMessage(false)
+        setStarLost(false)
+        setShowHints(false)
+    }, [taskId, levelId, professionId])
 
     const goToNext = () => {
         if (isMultiChoice) {
             if (!selectedAnswer) return
-            const correct = currentScene.correctAnswer
-            if (selectedAnswer === correct) {
-                if (wrongAttempts < 2) {
-                    setStars(prev => prev + 1)
-                }
+            if (selectedAnswer === currentScene.correctAnswer) {
+                if (wrongAttempts < 2) setStars(prev => prev + 1)
                 setCurrentSceneIndex(prev => prev + 1)
                 setSelectedAnswer(null)
                 setWrongAttempts(0)
                 setStarLost(false)
+                setShowHints(false)
             } else {
                 const newAttempts = wrongAttempts + 1
                 setWrongAttempts(newAttempts)
                 setStarLost(newAttempts >= 2)
                 setShowWrongMessage(true)
                 setSelectedAnswer(null)
+                setShowHints(false)
             }
         } else if (isCorrectOrder) {
             if (selectedOrder.length === 0) return
-            const correct = currentScene.correctOrder
-            const isCorrect = JSON.stringify(selectedOrder) === JSON.stringify(correct)
+            const isCorrect = JSON.stringify(selectedOrder) === JSON.stringify(currentScene.correctOrder)
             if (isCorrect) {
-                if (wrongAttempts < 2) {
-                    setStars(prev => prev + 1)
-                }
+                if (wrongAttempts < 2) setStars(prev => prev + 1)
                 setCurrentSceneIndex(prev => prev + 1)
                 setSelectedOrder([])
                 setWrongAttempts(0)
                 setStarLost(false)
+                setShowHints(false)
             } else {
                 const newAttempts = wrongAttempts + 1
                 setWrongAttempts(newAttempts)
                 setStarLost(newAttempts >= 2)
                 setShowWrongMessage(true)
                 setSelectedOrder([])
+                setShowHints(false)
             }
         } else {
-            if (currentSceneIndex < scenes.length) {
-                setCurrentSceneIndex(prev => prev + 1)
-                setWrongAttempts(0)
-                setSelectedAnswer(null)
-                setSelectedOrder([])
-                setStarLost(false)
-            }
+            setCurrentSceneIndex(prev => prev + 1)
+            setWrongAttempts(0)
+            setSelectedAnswer(null)
+            setSelectedOrder([])
+            setStarLost(false)
+            setShowHints(false)
         }
     }
 
@@ -96,15 +122,8 @@ export default function SimulationLab() {
             setSelectedAnswer(null)
             setSelectedOrder([])
             setStarLost(false)
+            setShowHints(false)
         }
-    }
-
-    const handleSelect = (selectedId) => {
-        setSelectedAnswer(selectedId)
-    }
-
-    const handleOrderChange = (newOrder) => {
-        setSelectedOrder(newOrder)
     }
 
     const renderScene = () => {
@@ -112,8 +131,9 @@ export default function SimulationLab() {
             return (
                 <Ending_template
                     message="Поздравляем!"
-                    description={`Ты успешно прошёл "${task.taskName}". Ты узнал много нового и проверил свои знания на практике!`}
+                    description={`Ты успешно прошёл "${task?.taskName}". Так держать!`}
                     stars={stars}
+                    professionId={professionId}
                 />
             )
         }
@@ -122,39 +142,16 @@ export default function SimulationLab() {
 
         if (currentScene.forma === 'theory') {
             if (currentScene.template === 'template2') {
-                return (
-                    <TheoryTemplate2
-                        title={currentScene.title}
-                        content={currentScene.content}
-                        onNext={goToNext}
-                    />
-                )
+                return <TheoryTemplate2 title={currentScene.title} content={currentScene.content} onNext={goToNext} />
             }
             if (currentScene.template === 'template3') {
-                return (
-                    <TheoryTemplate3
-                        title={currentScene.title}
-                        content={currentScene.content}
-                    />
-                )
+                return <TheoryTemplate3 title={currentScene.title} content={currentScene.content} />
             }
             if (currentScene.template === 'template4') {
-                return (
-                    <TheoryTemplate4
-                        title={currentScene.title}
-                        content={currentScene.content}
-                        image={currentScene.image}
-                    />
-                )
+                return <TheoryTemplate4 title={currentScene.title} content={currentScene.content} image={currentScene.image} />
             }
             if (currentScene.template === 'template5') {
-                return (
-                    <TheoryTemplate5
-                        title={currentScene.title}
-                        content={currentScene.content}
-                        image={currentScene.image}
-                    />
-                )
+                return <TheoryTemplate5 title={currentScene.title} content={currentScene.content} image={currentScene.image} />
             }
             return <TheoryTemplate1 title={currentScene.title} content={currentScene.content} />
         }
@@ -164,7 +161,7 @@ export default function SimulationLab() {
                 <MultiChoice_Choice
                     question={currentScene.question}
                     answer_options={currentScene.options}
-                    onAnswer={handleSelect}
+                    onAnswer={setSelectedAnswer}
                     selectedAnswer={selectedAnswer}
                 />
             )
@@ -175,7 +172,7 @@ export default function SimulationLab() {
                 <CorrectOrder
                     question={currentScene.question}
                     answer_options={currentScene.options}
-                    onAnswer={handleOrderChange}
+                    onAnswer={setSelectedOrder}
                     selectedOrder={selectedOrder}
                 />
             )
@@ -201,15 +198,33 @@ export default function SimulationLab() {
 
                 <div className="SimulationLab__actions__arrow_conteiner">
                     <ArrowButton
-                        disabled={isRightDisabled}
+                        disabled={isRightDisabled || isEnding}
                         onClick={goToNext}
                     />
                 </div>
+
+                {hintsAvailable && !isEnding && (
+                    <button
+                        className="SimulationLab__hints-btn"
+                        onClick={() => setShowHints(prev => !prev)}
+                        title="Подсказки"
+                    >
+                        !
+                    </button>
+                )}
             </div>
+
+            {showHints && (
+                <HintsPanel
+                    hints={currentScene?.hints || []}
+                    onClose={() => setShowHints(false)}
+                />
+            )}
 
             {showWrongMessage && (
                 <WrongAnswerMessage
                     starLost={starLost}
+                    exploration={starLost ? currentScene?.explanation : null}
                     onClose={() => setShowWrongMessage(false)}
                 />
             )}

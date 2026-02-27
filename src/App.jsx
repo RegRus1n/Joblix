@@ -14,7 +14,7 @@ function App() {
         <Route path="/professions" element={<ProfessionsPage />} />
         <Route path="/aboutus" element={<AboutUs />} />
         <Route path="/profession/:professionId" element={<ProfessionLevels/>} />
-        <Route path="/profession/:professionId/simulation" element={<SimulationLab/>} />
+        <Route path="/profession/:professionId/level/:levelId/task/:taskId" element={<SimulationLab/>} />
       </Routes>
     </>
   )

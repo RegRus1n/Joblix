@@ -56,3 +56,29 @@
 .WrongAnswerMessage__btn:hover {
   background-color: #cc0000;
 }
+
+.WrongAnswerMessage__exploration {
+  background-color: rgba(0, 192, 216, 0.08);
+  border: 1px solid rgba(0, 192, 216, 0.3);
+  border-radius: 10px;
+  padding: 14px 16px;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.WrongAnswerMessage__exploration-label {
+  font-family: "Montserrat-Bold", sans-serif;
+  font-size: 13px;
+  color: #00C0D8;
+  margin: 0 0 6px 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.WrongAnswerMessage__exploration-text {
+  font-family: "Montserrat-Light", sans-serif;
+  font-size: 14px;
+  color: #cccccc;
+  line-height: 1.6;
+  margin: 0;
+}

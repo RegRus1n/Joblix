@@ -17,3 +17,33 @@
 .ArrowButton{
     margin-bottom: 20px;
 }
+
+.SimulationLab__actions {
+    position: relative;
+}
+
+.SimulationLab__hints-btn {
+    position: absolute;
+    top: 24px;
+    right: 120px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: #1E1E1E;
+    border: 2px solid #00C0D8;
+    color: #00C0D8;
+    font-family: "DrukWideCyr-Bold", sans-serif;
+    font-size: 22px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    z-index: 50;
+}
+
+.SimulationLab__hints-btn:hover {
+    background-color: #00C0D8;
+    color: #1E1E1E;
+    transform: scale(1.1);
+}

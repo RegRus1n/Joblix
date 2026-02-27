@@ -11,19 +11,20 @@
       },
       {
         "levelId": "level2",
-        "levelName": "Продвинутый SMM"
+        "levelName": "Продвижение и аналитика",
+        "minStarsToUnlock": 3
       }
     ]
   },
   "frontend": {
     "id": "frontend",
     "title": "Front-End Разработчик",
-    "goal": "Цель: Рицарь Фронта",
+    "goal": "Рыцарь Фронта",
     "requirements": "Освой еще 2 навыка и пройди 3 задания без ошибок",
     "levels": [
       {
         "levelId": "level1",
-        "levelName": "Основы Frontend"
+        "levelName": "Основы HTML"
       }
     ]
   }

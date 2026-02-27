@@ -5,7 +5,7 @@ import Star from '@assets/images/Star.png'
 import SadMiko from "@assets/images/SadMiko.svg"
 import { Link } from 'react-router-dom'
 
-export default function Ending_template({ message = 'Поздравляем!', description = 'Описание', stars = 0 }) {
+export default function Ending_template({ message = 'Поздравляем!', description = 'Описание', stars = 0, professionId = '' }) {
   return (
     <div className="Ending_template">
       <div className="Ending_template__container">
@@ -37,11 +37,9 @@ export default function Ending_template({ message = 'Поздравляем!', d
           </div>
 
           <p className="Ending_template__stars_text">Ты заработал {stars} звёзд</p>
-          {/*  
-          Нужно сделать кнопку для возврата в professions/smm
-          но нужно сделать это по умному professions/:professionId
-          */}
-          {/* <Link to="./profession/"></Link> */}
+          <Link to={`/profession/${professionId}`} className="Ending_template__back-btn">
+            К уровням
+          </Link>
         </div>
       </div>
     </div>

@@ -67,5 +67,25 @@
   font-size: 20px;
   color: #00C0D8;
   font-weight: 600;
-  margin: 0;
+  margin: 0 0 32px 0;
+}
+
+.Ending_template__back-btn {
+  display: inline-block;
+  background-color: #00C0D8;
+  color: #1E1E1E;
+  font-family: "Montserrat-Bold", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  padding: 14px 40px;
+  border-radius: 28px;
+  text-decoration: none;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  text-align: center;
+  align-self: flex-start;
+}
+
+.Ending_template__back-btn:hover {
+  background-color: #00a8be;
+  transform: scale(1.03);
 }

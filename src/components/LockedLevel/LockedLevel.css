@@ -8,6 +8,19 @@
     margin-bottom: 60px;
 }
 
+.LockedLevel__stars {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 16px;
+}
+
+.LockedLevel__star {
+    width: 28px;
+    height: 28px;
+    filter: brightness(0.35);
+}
+
 .LockedLevel__level {
     font-family: "Montserat-Bold", sans-serif;
     font-size: 28.76px;
