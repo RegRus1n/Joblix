@@ -1,14 +1,11 @@
 import React from 'react'
 import './theory_templates.css'
-import { parseSimpleText } from '../../../utils/parseText.jsx'
+import { parseText } from '../../../utils/parseText.jsx'
 
-export default function theory_template2({ title, content, paragraphs, onNext }) {
+export default function theory_template2({ title, content, onNext }) {
   const handleClick = () => {
     onNext?.()
   }
-
-  const defaultParagraphs = ['Text...']
-  const textContent = paragraphs || (content ? [content] : defaultParagraphs)
 
   return (
     <div className='theory_template2 theory_template'>
@@ -16,11 +13,11 @@ export default function theory_template2({ title, content, paragraphs, onNext })
         <h1 className='theory_template2__title'>{title || 'Title...'}</h1>
 
         <div className='theory_template2__content'>
-          {textContent.map((para, idx) => (
-            <p key={idx} className='theory_template2__text'>
-              {parseSimpleText(para)}
-            </p>
-          ))}
+          {content ? (
+            <div>{parseText(content)}</div>
+          ) : (
+            <p className='theory_template2__text'>Content...</p>
+          )}
         </div>
 
         <button className='theory_template2__button' onClick={handleClick}>

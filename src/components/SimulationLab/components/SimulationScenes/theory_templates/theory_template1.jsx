@@ -1,7 +1,9 @@
 import React from 'react'
 import Miko from '@assets/images/Miko.svg'
 import './theory_templates.css'
-export default function theory_templates1({title, description}) {
+import { parseText } from '../../../utils/parseText.jsx'
+
+export default function theory_template1({title, content}) {
   return (
     <div className='theory_templates1 theory_template'>
       <div className="theory_templates1_conteiner">
@@ -12,7 +14,7 @@ export default function theory_templates1({title, description}) {
             <article>
               {title ? <h1>{title}</h1> : <h1>Title...</h1>}
               <br />
-              {description ? <p>{description}</p> : <p>Description...</p>}
+              {content ? <div>{parseText(content)}</div> : <p>Content...</p>}
             </article>
         </div>
       </div>

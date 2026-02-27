@@ -1,17 +1,13 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './MultiChoice_Choice.css'
 
 export default function MultiChoice_Choice({
     question = 'question...',
     answer_options = [],
     onAnswer,
-    answered = false
+    selectedAnswer = null
 }) {
-    const [selected, setSelected] = useState(null)
-
     const handleSelect = (option) => {
-        if (answered) return
-        setSelected(option.id)
         onAnswer(option.id)
     }
 
@@ -24,7 +20,7 @@ export default function MultiChoice_Choice({
                 <div className="MultiChoice_Choice__MultiChoice">
                     {answer_options?.map((option) => (
                         <div
-                            className={`option ${selected === option.id ? 'option--selected' : ''}`}
+                            className={`option ${selectedAnswer === option.id ? 'option--selected' : ''}`}
                             key={option.id}
                             onClick={() => handleSelect(option)}
                         >

@@ -1,0 +1,109 @@
+.CorrectOrder {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.CorrectOrder__container {
+    width: 50%;
+    margin-bottom: 300px;
+}
+
+.CorrectOrder__question {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.CorrectOrder__question h3 {
+    font-family: "DrukWideCyr-Bold", sans-serif;
+    text-align: center;
+    font-size: 32px;
+    color: white;
+}
+
+.CorrectOrder__options {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.CorrectOrder__option {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background-color: #00C0D8;
+    border-radius: 28px;
+    padding: 20px 24px;
+    font-family: "Montserrat-Bold", sans-serif;
+    color: black;
+    min-height: 70px;
+    cursor: grab;
+    transition: all 0.2s ease;
+}
+
+.CorrectOrder__option:active {
+    cursor: grabbing;
+}
+
+.CorrectOrder__option--moved {
+    background-color: #A7F5FF;
+    box-shadow: 0 0 0 3px #A7F5FF inset;
+}
+
+.CorrectOrder__number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background-color: rgba(0, 0, 0, 0.15);
+    border-radius: 50%;
+    font-size: 20px;
+    font-weight: bold;
+    flex-shrink: 0;
+    color: black;
+}
+
+.CorrectOrder__text {
+    font-size: 18px;
+    flex: 1;
+    color: black;
+}
+
+.CorrectOrder__arrows {
+    display: flex;
+    gap: 8px;
+    margin-left: auto;
+    flex-shrink: 0;
+}
+
+.CorrectOrder__arrow {
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 8px;
+    background-color: #1E1E1E;
+    color: #00C0D8;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+.CorrectOrder__arrow:hover {
+    background-color: #2a2a2a;
+    transform: scale(1.08);
+    box-shadow: 0 0 8px rgba(0, 192, 216, 0.4);
+}
+
+.CorrectOrder__arrow:active {
+    transform: scale(0.95);
+}
